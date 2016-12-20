@@ -1,0 +1,86 @@
+﻿@model DongHo.Models.SanPham
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin1.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SanPham</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên SP:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tensp)
+        </dd>
+
+        <dt>
+            Giá:
+        </dt>
+
+        <dd>
+            @string.Format("{0:0,0}", Model.Gia) VNĐ
+        </dd>
+
+        <dt>
+            Số lượng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soluong)
+        </dd>
+        <dt>
+            Ảnh bìa
+        </dt>
+
+        <dd>
+            <img src="@Url.Content("~/images/"+ Model.Anh)" style="width: 100px; height:100px;" />
+        </dd>
+        <dt>
+            Mô tả:
+        </dt>
+
+        <dd style="width: 700px; text-align: justify">
+            @Html.DisplayFor(model => model.Mota)
+        </dd>
+
+
+
+
+        <dt>
+            Ngày đăng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaydang)
+        </dd>
+
+        <dt>
+            Loại ĐH
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiSP.Tenloai)
+        </dd>
+
+        <dt>
+            Nhà SX
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhaSX.Tennsx)
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Masp }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

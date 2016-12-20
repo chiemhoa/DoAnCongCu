@@ -1,0 +1,34 @@
+﻿@model IEnumerable<DongHo.Models.LoaiSP>
+@using DongHo.Models
+
+@{
+    ViewBag.Title = "LoaiSP";
+    Layout = "~/Views/Shared/_LayoutAdmin1.cshtml";
+}
+
+<h2>Loại SP</h2>
+
+<p>
+    @Html.ActionLink("Create New", "ThemLoaiSP")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên Loại
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tenloai)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "SuaLoaiSP", new { id = item.Maloai }) |
+            @Html.ActionLink("Delete", "XoaLoaiSP", new { id=item.Maloai })
+        </td>
+    </tr>
+}
+
+</table>

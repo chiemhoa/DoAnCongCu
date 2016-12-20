@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="content_top">
+    <div class="heading">
+        <h3>Detalis</h3>
+    </div>
+
+    <div class="clear"></div>
+</div>
+<div class="cont-desc span_1_of_2">
+    <div class="product-details">
+        <div class="grid images_3_of_2">
+            <div id="container">
+                <div id="products_example">
+                    <div >
+                        <img src="~/images/@Model.Anh" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="desc span_3_of_2" style="width:45%">
+            <h2 style="font-size:25px;font-weight:bold;">@Model.Tensp</h2>
+            <div class="price">
+                <p>Price: <span>@String.Format("{0:0,0 đ}", @Model.Gia)</span></p>
+            </div>
+
+            <div class="share-desc">
+                <div class="share">
+                    <p>Share Product :</p>
+                    <ul>
+                        <li><a href="#"><img src="~/images/facebook.png" alt="" /></a></li>
+                        <li><a href="#"><img src="~/images/twitter.png" alt="" /></a></li>
+                    </ul>
+                </div>
+                <div class="button"><span><a href="@Url.Action("Themgiohang", "GioHang", new { @iMasp = @Model.Masp, @strURL = Request.Url.ToString()})">Add to Cart</a></span></div>
+                
+                <div class="clear"></div>
+            </div>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="product_desc">
+        <div id="horizontalTab">
+            <ul class="resp-tabs-list">
+                <li><a href="@Model.Thanhtoan"><img src="http://www.baokim.vn/developers/uploads/baokim_btn/thanhtoan-l.png"></a></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="resp-tabs-container">
+                <div class="product-desc">
+                    <p style="font-size:15px; color:#000;">@Html.Raw(Model.Mota)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true   // 100% fit in a container
+            });
+        });
+    </script>
+    <div class="content_bottom">
+        <div class="heading">
+            <h3>Related Products</h3>
+        </div>
+        <div class="see">
+            <p><a href="#">See all Products</a></p>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+        @*<div class="grid_1_of_4 images_1_of_4">
+            <a href="#"><img src="~/images/new-pic1.jpg" alt=""></a>
+            <div class="price" style="border:none">
+                <div class="add-cart" style="float:none">
+                    <h4><a href="#">Add to Cart</a></h4>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="grid_1_of_4 images_1_of_4">
+            <a href="#"><img src="~/images/new-pic2.jpg" alt=""></a>
+            <div class="price" style="border:none">
+                <div class="add-cart" style="float:none">
+                    <h4><a href="#">Add to Cart</a></h4>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="grid_1_of_4 images_1_of_4">
+            <a href="#"><img src="~/images/new-pic4.jpg" alt=""></a>
+            <div class="price" style="border:none">
+                <div class="add-cart" style="float:none">
+                    <h4><a href="#">Add to Cart</a></h4>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>*@
+        
+       @Html.Action("SanPhamLienQuan","DongHo")
+        <div class="fb-comments" data-href="https://chiemhoa.com" data-width="100%" data-numposts="1"></div>
+        
+        </div>
+</div>

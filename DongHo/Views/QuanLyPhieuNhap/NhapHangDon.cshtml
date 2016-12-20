@@ -1,0 +1,64 @@
+﻿@using DongHo.Models; 
+@model SanPham
+@{
+    ViewBag.Title = "NhapHangDon";
+    Layout = "~/Views/Shared/_LayoutAdmin1.cshtml";
+}
+
+
+
+<legend>Nhập hàng cho sản phẩm <b style="color: rgb(192,0,0)">@Model.Tensp</b> </legend>
+
+<hr />
+<br />
+
+<div class="row">
+    <div class="col-md-2">
+        
+            <img src="@Url.Content("~/images/"+Model.Anh)" style="width:140px;height:140px" />
+        
+    </div>
+    <div class="col-md-9">
+        <div class="ttSP">
+            <h3>Nhà sản xuất: @Model.NhaSX.Tennsx</h3>
+            <h3>Loại sản phẩm: @Model.LoaiSP.Tenloai</h3>
+            <h3>Số lượng tồn: @Model.Soluong</h3>
+        </div>
+    </div>
+</div>
+<br />
+<fieldset>
+    <legend>Thông tin nhập hàng</legend>
+</fieldset>
+@using (Html.BeginForm("NhapHangDon", "QuanLyPhieuNhap"))
+{
+    @Html.Hidden("MaSP", Model.Masp)
+    <div class="row">
+        <div class="col-md-4">
+            @{var lstNCC = (SelectList)ViewBag.Mancc;}
+            Nhà cung cấp: @Html.DropDownList("Mansx", lstNCC, new { @class = "Mansx" })
+        </div>
+        <div class="col-md-4">
+          
+            <input type="number" name="SoLuongNhap" />
+        </div>
+        <div class="col-md-4">
+     
+            <input type="number" name="DonGiaNhap" />
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+    <div class="clear right" style="text-align:right;">
+        <br />
+        <input type="submit" class="btn btn-primary" value="Nhập hàng" />
+    </div>
+}
+<style>
+    .imgSP {
+        border: 1px solid #999999;
+        background-color: #fff;
+        padding: 15px;
+    }
+</style>

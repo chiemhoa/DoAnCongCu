@@ -1,0 +1,7 @@
+﻿@model IEnumerable<DongHo.Models.NhaSX>
+<h3>Nhà Sản Xuất</h3>
+@foreach (var item in Model)
+{
+    <li><a href="@Url.Action("SPTheonsx", "DongHo", new { id =item.Mansx})">@item.Tennsx</a></li>
+    
+}
