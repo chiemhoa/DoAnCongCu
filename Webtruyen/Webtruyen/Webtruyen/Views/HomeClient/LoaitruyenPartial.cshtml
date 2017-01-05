@@ -1,0 +1,7 @@
+﻿@model List<Models.Framework.LOAITRUYEN>
+
+
+@foreach (var item in Model)
+{
+    <li><a href="@Url.Action("Timkiemloaitruyen","Timkiem",new { id= @item.Maloai})">@item.Tenloai</a></li>
+}

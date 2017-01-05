@@ -1,0 +1,59 @@
+﻿@model List<Models.Framework.CHUONG>
+
+<div class="bs-docs-example">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+    @*<th class="text-center">Mã</th>*@
+                        <th class="text-center"><span style="font-family: Arial; font-size: 19px;color:dimgray ">Chương</span></thclass="text-center">
+                        <th class="text-center"><span style="font-family: Arial; font-size: 19px;color:dimgray ">Tên chương</span></th>
+                        <th class="text-center"><span style="font-family: Arial; font-size: 19px;color:dimgray ">Cập nhật chương</span></th>
+                    </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr id="row_@item.Machuong" class="odd gradeX">
+                    @*<td class="text-center">@item.Machuong</td>*@
+                    <td class="text-center"><span style="font-family:Arial; font-size: 20px;color:darkgray ">@item.Thutuchuong</span></td>
+                    <td>
+                        <span style="font-family:Arial; font-size: 20px;color:darkgray ">
+                            <a href="@Url.Action("Docchuong","Doctruyen",new { id = @item.Machuong })">@item.Tenchuong</a>
+                        </span>
+
+                    </td>
+                    <td class="text-center"><span style="font-size: 18px;color:darkgray ">@item.Capnhatchuong</span></td>
+                </tr>
+               
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+    @*<ol>
+        @foreach (var item in Model)
+        {
+
+            <li class="list-group-item1">
+
+                <a href="@Url.Action("Docchuong","Doctruyen",new { id = @item.Machuong })">
+                    <h2 class="bars">
+                        <span style="font-family: Arial; font-size: 22px;color:gray ">
+                            @item.Tenchuong
+                        </span>
+                    </h2>
+                </a>
+
+            </li>
+
+        }
+
+    </ol>*@
+
+

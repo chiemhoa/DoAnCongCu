@@ -59,6 +59,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChuongModel.cs" />
+    <Compile Include="Dao\LoaitruyenDao.cs" />
+    <Compile Include="Dao\TaikhoanDao.cs" />
+    <Compile Include="Dao\TheLoaiDao.cs" />
     <Compile Include="Framework\CHUONG.cs" />
     <Compile Include="Framework\LOAITRUYEN.cs" />
     <Compile Include="Framework\TAIKHOAN.cs" />
@@ -67,6 +71,9 @@
     <Compile Include="Framework\TruyenDbContext.cs" />
     <Compile Include="Framework\TRUYEN_TL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaikhoanModel.cs" />
+    <Compile Include="TheloaiModel.cs" />
+    <Compile Include="TruyenModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -79,7 +86,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Dao\" />
     <Folder Include="ViewModel\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

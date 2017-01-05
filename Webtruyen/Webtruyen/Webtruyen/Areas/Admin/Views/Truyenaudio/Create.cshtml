@@ -1,0 +1,140 @@
+﻿@model Models.Framework.TRUYENAUDIO
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin2.cshtml";
+}
+
+@section header{
+    Thêm truyện audio
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tentruyen, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Tentruyen, new { htmlAttributes = new { @class = "form-control textbox-control" } })
+                @Html.ValidationMessageFor(model => model.Tentruyen, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tacgia, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Tacgia, new { htmlAttributes = new { @class = "form-control textbox-control" } })
+                @Html.ValidationMessageFor(model => model.Tacgia, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Duongdan, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+
+                @Html.EditorFor(model => model.Duongdan, null, new { htmlAttributes = new { @class = "form-control textbox-control" } })
+                @Html.ValidationMessageFor(model => model.Duongdan, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.Sochuong, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Sochuong, new { htmlAttributes = new { @class = "form-control textbox-control" } })
+                @Html.ValidationMessageFor(model => model.Sochuong, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Anhbia, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.Anhbia, new { htmlAttributes = new { @class = "form-control textbox-control" } })
+
+                @Html.ValidationMessageFor(model => model.Anhbia, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="col-md-6">
+                <input tyle="button" id="Browse" value="Chọn ảnh" class="btn btn-outline btn-default" />
+            </div>
+            <script>
+                $("#Browse").click(function()
+                {
+                    var finder = new CKFinder();
+                    finder.selectActionFunction = function (fileUrl) {
+                        //lấy file ảnh cuối cùng
+                      //  fileUrl = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
+                        $("#Anhbia").val(fileUrl);
+                    };
+                    finder.popup();
+                }
+                );
+            </script>
+
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Mota, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.TextAreaFor(model => model.Mota, new { htmlAttributes = new { @class = "form-control textbox-control" } })
+                @Html.ValidationMessageFor(model => model.Mota, "", new { @class = "text-danger" })
+                <script type="text/javascript">
+                    CKEDITOR.replace("Mota");
+                </script>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nguon, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Nguon, new { htmlAttributes = new { @class = "form-control textbox-control" } })
+                @Html.ValidationMessageFor(model => model.Nguon, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.Tinhtrang, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Tinhtrang, new { htmlAttributes = new { @class = "form-control textbox-control" } })
+                @Html.ValidationMessageFor(model => model.Tinhtrang, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.Ngaycapnhat, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.Ngaycapnhat, new { htmlAttributes = new { @class = "form-control textbox-control" } })
+                    @Html.ValidationMessageFor(model => model.Ngaycapnhat, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Solandoc, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.Solandoc, new { htmlAttributes = new { @class = "form-control textbox-control" } })
+                    @Html.ValidationMessageFor(model => model.Solandoc, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+        @*<input id="themtl" type="button" value="Thêm thể loại" class="btn btn-outline" />*@
+        <script>
+
+        </script>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-12">
+                <input type="submit" value="Thêm mới" class="btn btn-outline btn-success" />
+            </div>
+        </div>
+
+
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Quay lại", "Index")
+</div>
