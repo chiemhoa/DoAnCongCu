@@ -60,12 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChuongModel.cs" />
-    <Compile Include="Dao\ChuongDao.cs" />
     <Compile Include="Dao\LoaitruyenDao.cs" />
     <Compile Include="Dao\TaikhoanDao.cs" />
     <Compile Include="Dao\TheLoaiDao.cs" />
-    <Compile Include="Dao\TruyenDao.cs" />
-    <Compile Include="Dao\TruyentheloaiDao.cs" />
     <Compile Include="Framework\CHUONG.cs" />
     <Compile Include="Framework\LOAITRUYEN.cs" />
     <Compile Include="Framework\TAIKHOAN.cs" />
