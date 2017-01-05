@@ -208,7 +208,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Code\CommonConstants.cs" />
+    <Compile Include="Areas\Admin\Code\SessionHelper.cs" />
+    <Compile Include="Areas\Admin\Code\UserLogin.cs" />
+    <Compile Include="Areas\Admin\Code\UserSession.cs" />
     <Compile Include="Areas\Admin\Controllers\AboutController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoaitruyenController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TheloaiController.cs" />
+    <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -1241,6 +1251,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Theloai\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin2.cshtml" />
     <Content Include="Areas\Admin\Views\About\Index.cshtml" />
     <Content Include="Areas\Admin\Content\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
     <Content Include="Areas\Admin\Content\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.eot" />
@@ -1249,6 +1264,12 @@
     <Content Include="Areas\Admin\Content\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Areas\Admin\Content\ckfinder\userfiles\.htaccess" />
     <Content Include="Areas\Admin\Content\ckeditor\.htaccess" />
+    <Content Include="Areas\Admin\Views\Theloai\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Theloai\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Loaitruyen\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Loaitruyen\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Loaitruyen\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Login.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1303,7 +1324,7 @@
     <Folder Include="Areas\Admin\Content\files\" />
     <Folder Include="Areas\Admin\Content\flash\" />
     <Folder Include="Areas\Admin\Images\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="Assets\Admin\data\" />
     <Folder Include="Assets\Admin\dist\" />
     <Folder Include="Assets\Admin\js\plugins\" />
