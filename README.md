@@ -1,1 +1,1 @@
-#Chức năng xây dựng truyện và chương thành công cho admin
+#Xây dựng truyện và chương thành công cho admin
