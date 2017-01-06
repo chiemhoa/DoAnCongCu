@@ -1,0 +1,46 @@
+﻿   
+
+    .reponsive{
+        width: 200px;
+        height: 100px;
+        /*border: 1px dotted black;*/
+        overflow: hidden;
+
+    }
+     p#tieude{
+        font-size:180%;
+    }
+      p#tentruyentieude{
+        font-size:150%;
+    }
+      p#tenchuongtieude{
+          font-size:150%;
+      }
+      .noidung p,span{
+        font-size:23px;
+    }
+    
+@media screen and (max-width: 480px){
+  
+    p#tieude{
+        font-size:100%;
+    }
+    p#mota{
+        font-size:50%;
+    }
+    p#tentruyentieude{
+        font-size:100%;
+    }
+    img#Anhbiact{
+         width: 300px;
+       
+    }
+    p#tenchuongtieude{
+          font-size:100%;
+      }
+   .noidung p, span{
+      
+               font-size:14px;
+                 
+    }
+}
