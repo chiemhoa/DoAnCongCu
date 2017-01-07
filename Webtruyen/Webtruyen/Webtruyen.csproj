@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Webtruyen</RootNamespace>
     <AssemblyName>Webtruyen</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -227,6 +228,7 @@
     <Compile Include="Controllers\HomeClientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TimkiemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1350,10 +1352,17 @@
     <Content Include="Views\Doctruyen\Chitiettruyen.cshtml" />
     <Content Include="Views\Doctruyen\ChuongtruyenPartial.cshtml" />
     <Content Include="Views\Doctruyen\DocChuong.cshtml" />
+    <Content Include="Views\Timkiem\Timkiemtheloai.cshtml" />
+    <Content Include="Views\Timkiem\Timkiemtruyenmoi.cshtml" />
+    <Content Include="Views\Timkiem\Timkiemtruyenhot.cshtml" />
+    <Content Include="Views\Timkiem\Timkiemtruyentacgia.cshtml" />
     <Content Include="Views\HomeClient\TruyenhotPartial.cshtml" />
     <Content Include="Views\Doctruyen\CungtacgiaPartial.cshtml" />
+    <Content Include="Views\Timkiem\Timkiemtruyenabc.cshtml" />
+    <Content Include="Views\Timkiem\Timkiemloaitruyen.cshtml" />
     <Content Include="Views\HomeClient\LoaitruyenPartial.cshtml" />
     <Content Include="Views\Shared\OtimkiemPartial.cshtml" />
+    <Content Include="Views\Timkiem\Timkiemtukhoa.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

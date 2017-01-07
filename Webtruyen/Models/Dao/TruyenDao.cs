@@ -192,7 +192,29 @@ namespace Models.Dao
 
         }
 
-        
+        public IEnumerable<TRUYEN> ListTabcpagelist(int page, int pageSize)
+        {
+            return db.TRUYEN.OrderBy(x => x.Tentruyen).ToPagedList(page, pageSize);
+        }
+
+        public IEnumerable<TRUYEN> ListTMpagelist(int page, int pageSize)
+        {
+            return db.TRUYEN.OrderByDescending(x => x.Ngaycapnhat).ToPagedList(page, pageSize);
+        }
+        public IEnumerable<TRUYEN> ListTHpagelist(int page, int pageSize)
+        {
+            return db.TRUYEN.OrderByDescending(x => x.Solandoc).ToPagedList(page, pageSize);
+        }
+        public IEnumerable<TRUYEN> ListTTGpagelist(string tg,int page, int pageSize)
+        {
+            object[] sqlParams =
+           {
+                new SqlParameter("@tg",tg),
+
+            };
+            var list = db.Database.SqlQuery<TRUYEN>("sp_tk_ttg @tg", sqlParams).OrderBy(x => x.Matruyen).ToList().ToPagedList(page, pageSize);
+            return list;
+        }
         public IEnumerable<TRUYEN> ListTCTG(string tg)
         {
             object[] sqlParams =
@@ -229,9 +251,28 @@ namespace Models.Dao
         }
 
 
-       
+        public IEnumerable<TRUYEN> ListTtheoloaipagelist(int id,int page, int pageSize)
+        {
+            return db.TRUYEN.Where(x=>x.Maloai==id).OrderBy(x => x.Tentruyen).ToPagedList(page, pageSize);
+        }
+
+        public IEnumerable<TRUYEN> ListOTKpagelist(string tk, int page, int pageSize)
+        {
+
+
+            var list= db.TRUYEN.Where(x => x.Tentruyen.Contains(tk) || x.Tacgia.Contains(tk)).OrderBy(x => x.Tentruyen).ToPagedList(page, pageSize);
+            //list = db.TRUYEN.Where(x => x.Tacgia.Contains(tk)).OrderBy(x => x.Tentruyen).ToPagedList(page, pageSize);
+            //    list=(TimkiemtruyenViewModel)db.TRUYENAUDIO.Where(x => x.Tentruyen.Contains(tk)).OrderBy(x => x.Tentruyen).ToPagedList(page, pageSize);
+            //list = (TimkiemtruyenViewModel)db.TRUYENAUDIO.Where(x => x.Tacgia.Contains(tk)).OrderBy(x => x.Tentruyen).ToPagedList(page, pageSize);
+            //list = (TimkiemtruyenViewModel)db.TRUYENTRANH.Where(x => x.Tentruyen.Contains(tk)).OrderBy(x => x.Tentruyen).ToPagedList(page, pageSize);
+            //list = (TimkiemtruyenViewModel)db.TRUYENTRANH.Where(x => x.Tacgia.Contains(tk)).OrderBy(x => x.Tentruyen).ToPagedList(page, pageSize);
+            return list;
+        }
         //============Thống kê trang chủ==================
-   
+        public List<TRUYEN> TKtruyenchuhot()
+        {
+            return db.TRUYEN.OrderByDescending(x => x.Solandoc).Take(10).ToList();
+        }
       
       
 
