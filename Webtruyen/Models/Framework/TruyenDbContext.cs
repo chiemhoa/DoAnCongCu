@@ -18,8 +18,8 @@ namespace Models.Framework
         public virtual DbSet<THELOAI> THELOAI { get; set; }
         public virtual DbSet<TRUYEN> TRUYEN { get; set; }
         public virtual DbSet<TRUYEN_TL> TRUYEN_TL { get; set; }
-       
-       
+        public virtual DbSet<TRUYENAUDIO> TRUYENAUDIO { get; set; }
+        public virtual DbSet<TRUYENTRANH> TRUYENTRANH { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -35,9 +35,13 @@ namespace Models.Framework
                 .Property(e => e.Anhbia)
                 .IsUnicode(false);
 
-           
+            modelBuilder.Entity<TRUYENAUDIO>()
+               .Property(e => e.Anhbia)
+               .IsUnicode(false);
 
-           
+            modelBuilder.Entity<TRUYENTRANH>()
+                .Property(e => e.Anhbia)
+                .IsUnicode(false);
         }
     }
 }

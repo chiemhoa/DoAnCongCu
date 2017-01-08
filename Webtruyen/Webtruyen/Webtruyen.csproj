@@ -220,13 +220,16 @@
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\TheloaiController.cs" />
     <Compile Include="Areas\Admin\Controllers\TheloaitruyenController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TruyenaudioController.cs" />
     <Compile Include="Areas\Admin\Controllers\TruyenController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TruyentranhController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DoctruyenController.cs" />
     <Compile Include="Controllers\HomeClientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TimkiemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1296,6 +1299,12 @@
     <Content Include="Areas\Admin\Views\Loaitruyen\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Loaitruyen\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Login\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\Truyenaudio\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Truyenaudio\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Truyenaudio\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Truyentranh\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Truyentranh\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Truyentranh\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1350,10 +1359,22 @@
     <Content Include="Views\Doctruyen\Chitiettruyen.cshtml" />
     <Content Include="Views\Doctruyen\ChuongtruyenPartial.cshtml" />
     <Content Include="Views\Doctruyen\DocChuong.cshtml" />
+    <Content Include="Views\Doctruyen\TentruyenPartial.cshtml" />
+    <Content Include="Views\Timkiem\Timkiemtheloai.cshtml" />
+    <Content Include="Views\Timkiem\Timkiemtruyenmoi.cshtml" />
+    <Content Include="Views\Timkiem\Timkiemtruyenhot.cshtml" />
+    <Content Include="Views\Timkiem\Timkiemtruyentacgia.cshtml" />
     <Content Include="Views\HomeClient\TruyenhotPartial.cshtml" />
     <Content Include="Views\Doctruyen\CungtacgiaPartial.cshtml" />
+    <Content Include="Views\Doctruyen\Nghetruyenaudio.cshtml" />
+    <Content Include="Views\Timkiem\Timkiemtruyenaudio.cshtml" />
+    <Content Include="Views\Timkiem\Timkiemtruyenabc.cshtml" />
+    <Content Include="Views\Timkiem\Timkiemtruyentranh.cshtml" />
+    <Content Include="Views\Doctruyen\Xemtruyentranh.cshtml" />
+    <Content Include="Views\Timkiem\Timkiemloaitruyen.cshtml" />
     <Content Include="Views\HomeClient\LoaitruyenPartial.cshtml" />
     <Content Include="Views\Shared\OtimkiemPartial.cshtml" />
+    <Content Include="Views\Timkiem\Timkiemtukhoa.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

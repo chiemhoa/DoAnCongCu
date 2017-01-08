@@ -66,6 +66,21 @@ namespace Webtruyen.Controllers
 
         //====================================================
 
-       
+        public ActionResult Nghetruyenaudio(int id)
+        {
+            var truyen = new TruyenaudioDao().ViewDetail(id);
+            ViewBag.truyenaudio = truyen;
+            ViewBag.truyenlq = new TruyenaudioDao().List10truyenaudio();
+            var flat = new TruyenaudioDao().UpdateSLD(truyen);
+            return View();
+        }
+        public ActionResult Xemtruyentranh(int id)
+        {
+            var truyen = new TruyentranhDao().ViewDetail(id);
+            ViewBag.truyentranh = truyen;
+            ViewBag.truyenlq = new TruyentranhDao().List10truyenaudio();
+            var flat = new TruyentranhDao().UpdateSLD(truyen);
+            return View();
+        }
     }
 }
