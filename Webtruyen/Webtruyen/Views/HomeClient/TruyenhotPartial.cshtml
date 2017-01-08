@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Models.Framework.TRUYEN>
+   
+        
+        <div>
+    @{ int i = 1;}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="type-info"><p><a href="@Url.Action("Chitiettruyen", "Doctruyen", new { id = @item.Matruyen })"><span id="p" style="font-family:Calibri; color:sienna;font-size:15px;"><strong>@i.&nbsp;@item.Tentruyen</strong></span></a></p>
+                    <p>
+                        ✎&nbsp;&nbsp;@item.Tacgia<br />
+                       
+                        
+                    </p>
+                </td>
+                
+            </tr>
+            i++;
+        }</div>
+
+@helper Truncate(string input, int length)
+{
+if (input == null)
+{
+}
+else
+{
+    if (input.Length < length)
+    {
+            @input
+    }
+    else
+    {
+            @input.Substring(0, length)<text>...</text>
+    }
+}
+}
+
+
+    

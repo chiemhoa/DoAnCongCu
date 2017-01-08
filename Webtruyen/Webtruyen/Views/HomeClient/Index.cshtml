@@ -1,0 +1,438 @@
+﻿@model IEnumerable<Models.Framework.TRUYEN>
+<link href = "/Content/Nguoidungtrangchu.css" rel = "stylesheet" />
+<link href="~/Content/Nguoidungtimkiem.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutClient.cshtml";
+    var chuongmoinhat = (List<Models.ViewModel.ChuongmoinhatViewModel>)ViewBag.Chuongmoinhat;
+    var truyenmoi = (List<Models.Framework.TRUYEN>)ViewBag.truyenmoi;
+    string sochuong="0";
+
+}
+
+
+
+@section baner{
+
+    <div class="banner">
+        <div class="container">
+            <div class="banner-bottom">
+                <div class="banner-bottom-left">
+                    <h2><span">T<br>C<br>O</span></h2>
+
+                </div>
+                <div class="banner-bottom-right">
+                    <div class="callbacks_container">
+                        <ul class="rslides" id="slider4">
+                            <li>
+                                <div class="banner-info">
+                                    <h3><span style="font-family:Calibri">Truyện Chữ Online</span></h3>
+                                    <p><span style="font-family:Calibri">Tuyển tập truyện chữ hay nhất<br />Cùng nhau trải nghiệm thế giới truyện đọc muôn màu</span></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="banner-info">
+                                    <h3><span style="font-family:Calibri">Truyện audio</span></h3>
+                                    <p><span style="font-family:Calibri">Những câu chuyện cảm động về cuộc sống với cách thể hiện mới mẻ, giọng đọc xúc cảm là những điều bạn không nên bỏ qua</span></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="banner-info">
+                                    <h3><span style="font-family:Calibri">Truyện tranh</span></h3>
+                                    <p><span style="font-family:Calibri">Những tập truyện sống động, lôi cuốn người xem,<br /> đừng bỏ lỡ!</span></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--banner-->
+                    <script src="/Assets/Client/js/responsiveslides.min.js"></script>
+                    <script>
+			    // You can also use "$(window).load(function() {"
+			    $(function () {
+			      // Slideshow 4
+			      $("#slider4").responsiveSlides({
+			        auto: true,
+			        pager:true,
+			        nav:false,
+			        speed: 500,
+			        namespace: "callbacks",
+			        before: function () {
+			          $('.events').append("<li>before event fired.</li>");
+			        },
+			        after: function () {
+			          $('.events').append("<li>after event fired.</li>");
+			        }
+			      });
+
+			    });
+                    </script>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="shop">
+                <a href="@Url.Action("Timkiemtruyenabc","Timkiem")">Đọc truyện</a>
+            </div>
+        </div>
+    </div>
+
+}
+
+<!--Slide-->
+
+
+<!--//Slide-->
+
+
+
+
+
+        @*<div>
+            @{ int i = 0;}
+            @foreach (var item in Model)
+            {
+                i++;
+                <div id="truyen">
+                    <div id="Anhbia">
+                        <a href="/Doctruyen/Chitiettruyen/@item.Matruyen"><img style="cursor:auto" src="@item.Anhbia" height="220" width="150" /></a>
+                    </div>
+                    <div id="truyentrangthai" class="text-center">
+                        <div id="Tentruyen">
+                            <a href="/Doctruyen/Chitiettruyen/@item.Matruyen"><span style="font-family:Arial">@item.Tentruyen</span></a>
+                        </div>
+                        <div>
+                            <p>Full-@item.Sochuong Chương</p>
+                        </div>
+                    </div>
+                </div>
+                if (i % 4 == 0)
+                {
+                    <div style="clear:both"></div>
+                }
+            }
+        </div>*@
+<!--=============================================-->
+<div class="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="">
+                <div>
+                    <!--trang hien thi-->
+                    <!--mới-->
+                    <!--cũ-->
+                    <div class="">
+                        <header>
+                            <h3 class="head text-center"></h3>
+                        </header>
+                        @foreach (var item in Model)
+                        {
+                            <div id="truyeds" class="col-md-2 product">
+                                <div id="dsAnhbia">
+                                    <a href="/Doctruyen/Chitiettruyen/@item.Matruyen"><img style="cursor:auto" src="@item.Anhbia" height="170" width="120" /></a>
+                                </div>
+                                <div class="mask">
+                                    <a href="/Doctruyen/Chitiettruyen/@item.Matruyen"><span style="font-family:Arial; font-size:smaller">Đọc truyện</span></a>
+                                </div>
+                                <div id="dstentruyen" class="text-center text-capitalize">
+                                   @{ if (@item.Sochuong < 10)
+                                       {
+                                          
+                                        <p><a href="#"><span class="badge badge-primary" style="font-family:Calibri;font-size:14px;color:ghostwhite ">Full-@sochuong@item.Sochuong Chương </span></a></p><br />
+
+                                       }
+                                       else
+                                       {
+                                        <p><a href="#"><span class="badge badge-primary" style="font-family:Calibri;font-size:14px;color:ghostwhite ">Full-@item.Sochuong Chương </span></a></p><br />
+
+                                       }
+                                }
+                                    <p id="p"><a class="" href="/Doctruyen/Chitiettruyen/@item.Matruyen"><span style="font-family:Calibri; color:sienna;font-size:15px">@item.Tentruyen</span></a></p>
+
+                                </div>
+
+                            </div>
+
+                        <!--==============-->
+
+
+                        }
+                        <!--item_add -->
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    @*<div class="online-strip">
+            <div class="col-md-4 follow-us">
+                <h3>follow us : <a class="twitter" href="#"></a><a class="facebook" href="#"></a></h3>
+            </div>
+            <div class="col-md-4 shipping-grid">
+                <div class="shipping">
+                    <img src="/Assets/Client/images/shipping.png" alt="" />
+                </div>
+                <div class="shipping-text">
+                    <h3>Free Shipping</h3>
+                    <p>on orders over $ 199</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-4 online-order">
+                <p>Order online</p>
+                <h3>Tel:999 4567 8902</h3>
+            </div>
+            <div class="clearfix"></div>
+        </div>*@
+</div>
+
+
+<!--=============================================-->
+<div class="container">
+    <div class="products-page">
+        
+        <div class="new-product">
+            @*<div class="new-product-top">
+                <ul class="product-top-list">
+                   
+                </ul>
+               
+                <div class="clearfix"></div>
+            </div>*@
+           
+            @*<div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">
+                <ul>
+                  
+			    </ul>
+			</div>*@
+            <!---------------------------->
+            <div id="bangchuongmoi">
+                <h3 class="first"><span style="font-family:Arial;color:darkred">Các chương mới nhất</span></h3>
+                <div class="">
+                    <table class="table table-hover">
+                        <tbody>
+                            @{ 
+                                int i = 1;
+                                int ma = 0;
+                                List<int> lma=new List<int>();
+                            }
+                            @foreach (var item in chuongmoinhat)
+                                {
+                                    ma = 0;
+                                    if (i <=10)
+                                    {
+                                        foreach(int j in lma)
+                                        {
+                                            if(j== @item.Matruyen)
+                                            {
+                                                ma = 1;break;
+                                            }
+                                        }
+                                        if (ma==0)
+                                        {
+                                            lma.Add(@item.Matruyen);
+                                        <tr>
+                                            <td id="cotanhtk" width="210">
+                                                <div id="anhtk" class="reponsive">
+                                                    <a href="/Doctruyen/Chitiettruyen/@item.Matruyen"><img id="anhbiatk" style="cursor:auto" src="@item.Anhbia" width="200" /></a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p id="tentruyenCM">
+                                                    <a class="" href="/Doctruyen/Chitiettruyen/@item.Matruyen"><span id="p" style="font-family:Calibri;font-size:120%; color:sienna;"><strong>@item.Tentruyen</strong></span></a>
+                                                </p>
+                                                <p>
+                                                    ✎&nbsp;&nbsp;@item.Tacgia<br />
+                                                    ღ&nbsp;&nbsp;@item.Sochuong &nbsp;chương<br />
+                                                    @*❦&nbsp;&nbsp;@item.Ngaycapnhat*@
+                                                </p>
+                                                <div id="chuongmoi" class="text-right">
+                                                    <a class="" href="/Doctruyen/Docchuong/@item.Machuong"><span id="p" style="font-family:Calibri; color:sienna;font-size:16px;"><strong>Chương @item.Thutuchuong</strong></span></a>
+                                                    <p>
+                                                        ❦&nbsp;&nbsp;@item.Capnhatchuong
+                                                    </p>
+                                                </div>
+                                            </td>
+                                                @* <td>Otto</td>*@
+
+</tr>
+                                        i++;
+                                    }
+
+                                }
+
+
+
+                            }
+
+
+                        </tbody>
+                    </table>
+                    @*@Html.PagedListPager(Model, page => Url.Action("Timkiemtruyenmoi", new { page }))*@
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+
+
+
+            <!------------------------>
+
+<script src="/Assets/Client/js/cbpViewModeSwitch.js" type="text/javascript"></script>
+<script src="/Assets/Client/js/classie.js" type="text/javascript"></script>
+			</div>
+        <div class="products">
+            
+            <div class="product-listy">
+                <h2 class="text-center">Thể loại</h2>
+                <ul class="product-list">
+                    <!--<li><a href="">New Products</a></li>-->
+                    @Html.Action("_TheloaiPartial", "HomeClient")
+                   
+                </ul>
+            </div>
+
+            <div class="tags">
+                <h4 class="tag_head">Truyện HOT</h4>
+                <ul class="tags_links"></ul>
+                <div class="bs-example">
+                    <table class="table">
+                        <tbody>
+                            @Html.Action("TruyenhotPartial", "HomeClient")
+                            @*<tr>
+                              
+                                <td class="type-info">Semibold 36px</td>
+                            </tr>
+                            <tr>
+                                
+                                <td class="type-info">Semibold 30px</td>
+                            </tr>
+                            <tr>
+                             
+                                <td class="type-info">Semibold 24px</td>
+                            </tr>
+                            <tr>
+                              
+                                <td class="type-info">Semibold 18px</td>
+                            </tr>
+                            <tr>
+                                
+                                <td class="type-info">Semibold 14px</td>
+                            </tr>
+                            <tr>
+                                
+                                <td class="type-info">Semibold 12px</td>
+                            </tr>*@
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="latest-bis">
+                <br /><br /><br />
+                <div class="offer">
+                    <p>TOP</p>
+                    <small>10 truyện</small>
+                </div>
+            </div>
+            
+
+        </div>
+        <div class="clearfix"></div>
+			</div>
+        <div class="clearfix"></div>
+   </div>
+<!-- content-section-ends -->
+
+
+
+
+
+
+<!--========================================-->
+
+
+
+
+
+
+@section slide{
+    <div class="other-products">
+        <div class="container">
+            <h3 class="like text-center"><span style="font-family:Arial;color:darkred">Truyện mới</span></h3>
+            <ul id="flexiselDemo3">
+                @foreach (var item in truyenmoi)
+                {
+                    <li class="text-center">
+                        <a href="/Doctruyen/Chitiettruyen/@item.Matruyen"><img src="@item.Anhbia" height="300" class="" alt="" /></a>
+                        <div id="tentruyenslide" class="product liked-product simpleCart_shelfItem text-center">
+                            <a class="" href="/Doctruyen/Chitiettruyen/@item.Matruyen"><span style="font-family:Arial;color:sienna;font-size:15px"><strong>@item.Tentruyen</strong></span></a>
+                           <!--<p><br/><a class="item_add" href="#"><i></i> <span class="">@item.Tinhtrang</span></a></p>-->
+                        </div>
+                    </li>
+                }
+
+               
+            </ul>
+            <script type="text/javascript">
+					 $(window).load(function() {
+						$("#flexiselDemo3").flexisel({
+							visibleItems: 4,
+							animationSpeed: 1000,
+							autoPlay: true,
+							autoPlaySpeed: 3000,
+							pauseOnHover: true,
+							enableResponsiveBreakpoints: true,
+					    	responsiveBreakpoints: {
+					    		portrait: {
+					    			changePoint:480,
+					    			visibleItems: 1
+					    		},
+					    		landscape: {
+					    			changePoint:640,
+					    			visibleItems: 2
+					    		},
+					    		tablet: {
+					    			changePoint:768,
+					    			visibleItems: 3
+					    		}
+					    	}
+					    });
+
+					});
+            </script>
+            <script type="text/javascript" src="/Assets/Client/js/jquery.flexisel.js"></script>
+        </div>
+    </div>
+}
+
+@helper Truncate(string input, int length)
+{
+if (input == null)
+{
+}
+else
+{
+    if (input.Length < length)
+    {
+            @input
+    }
+    else
+    {
+            @input.Substring(0, length)<text>...</text>
+    }
+}
+}
+
+

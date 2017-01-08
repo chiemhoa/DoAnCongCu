@@ -1,0 +1,68 @@
+﻿   
+
+    .reponsive{
+        width: 200px;
+        height: 100px;
+        /*border: 1px dotted black;*/
+        overflow: hidden;
+
+    }
+     p#tieude{
+        font-size:180%;
+    }
+      p#tentruyentieude{
+        font-size:150%;
+    }
+      span#a{
+          width: 100%;
+      }
+      .r-img img{
+          /*position:absolute;*/
+          /*left:-9999px;*/
+          text-align: center;
+      }
+      .r-img p, span{
+          
+         font-size:20px;
+     }
+      .mota p,span{
+        font-size:20px;
+    }
+    
+@media screen and (max-width: 480px){
+  
+    .r-img img{
+        
+          width:auto!important;
+          height:auto!important;
+
+          
+      }
+     .r-img img{
+         position:static;
+         max-width:100%;
+      }
+     .r-img p, span{
+          position:static;
+         font-size:14px;
+     }
+    p#tieude{
+        font-size:100%;
+    }
+    p#mota{
+        font-size:50%;
+    }
+    p#tentruyentieude{
+        font-size:100%;
+    }
+    img#Anhbiact{
+         width: 300px;
+       
+    }
+   
+    .mota p,span{
+        font-size:14px;
+    }
+
+
+}
